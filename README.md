@@ -37,6 +37,7 @@ sudo docker run hello-world
 docker pull postgres
 docker pull dpage/pgadmin4
 ```
+
 * Criando uma network
 
 ```shell
@@ -45,13 +46,22 @@ docker network create --driver bridge postgres-network
 # para exibir network criado
 docker network ls 
 ```
+
 * Criando um container postgres e pgadmin
 
 ```shell
 docker run --name some-postgres --network=postgres-network -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -v /var/lib/postgresql/data -d postgres
 docker run --name some-pgadmin --network=postgres-network -p 15432:80 -e PGADMIN_DEFAULT_EMAIL=example@example.com -e PGADMIN_DEFAULT_PASSWORD=mysecretpassword -d dpage/pgadmin4
 ```
+
 * Para acessar pgadmin: http://localhost:15432 
+
+___
+
+## Cloud Amqp
+
+* Acesse [Cloud Amqp](https://www.cloudamqp.com/);
+* Crie um mq RabbitMq;
 
 ___
 
