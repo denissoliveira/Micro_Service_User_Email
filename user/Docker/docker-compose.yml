@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  pgdata:
+
+    version: '3.8'  # Versão do Docker Compose
+
+    services:
+      postgres:
+        image: postgres  # A imagem do PostgreSQL
+        container_name: some-postgres  # Nome do container
+        networks:
+          - postgres-network  # Rede a ser usada
+        environment:
+          POSTGRES_PASSWORD: postgres  # Senha do PostgreSQL
+        ports:
+          - "5432:5432"  # Mapeamento da porta 5432
+        volumes:
+          - /home/renatogroffe/Desenvolvimento/PostgreSQL:/var/lib/postgresql/data  # Volume para persistência de dados
+        restart: unless-stopped  # Garantir que o container reinicie automaticamente, a menos que seja parado manualmente
+
+    networks:
+      postgres-network:
+        driver: bridge  # Usando a rede "bridge" como driver, igual ao padrão no Docker
