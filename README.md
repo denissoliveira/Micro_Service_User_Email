@@ -55,7 +55,7 @@ docker run --name some-pgadmin --network=postgres-network -p 15432:80 -e PGADMIN
 ```
 
 * Para acessar pgadmin: http://localhost:15432 
-
+* O endereço é "some-postgres", usando para o pgadmin acessar o postges
 ___
 
 ## Cloud Amqp
