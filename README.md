@@ -65,6 +65,9 @@ ___
 
 ___
 
+**Projeto inclui Maven PMD e CheckStyle.**
+___
+
 ### Referências:
 
 [PostgreSQL + Docker: executando uma instância e o pgAdmin 4 a partir de containers](https://renatogroffe.medium.com/postgresql-docker-executando-uma-inst%C3%A2ncia-e-o-pgadmin-4-a-partir-de-containers-ad783e85b1a4)
